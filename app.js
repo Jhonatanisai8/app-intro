@@ -1,11 +1,18 @@
 console.log("Hola Mundo Axios");
-function obtenerUsuarios() {
-  axios({
-    url: "https://jsonplaceholder.typicode.com/users",
-    method: "GET",
-  })
-    .then((res) => console.log(res.data))
-    .catch((err) => console.log(err));
+async function obtenerUsuarios() {
+  try {
+    const response = await axios.get(
+      "https://jsonplaceholder.typicode.com/users"
+    );
+    return response.data;
+  } catch (error) {
+    console.log("error al obtener usuarios".error);
+  }
 }
 
-obtenerUsuarios();
+async function init() {
+  const usuarios = await obtenerUsuarios();
+  console.log(usuarios);
+}
+
+init();
