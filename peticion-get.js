@@ -25,7 +25,6 @@ function mostrarUsarios(usuarios) {
     <p><strong>Ciudad:</strong> ${usuario.address.city}</p>
     `;
     contenedorUsuarios.appendChild(card);
-    
   });
 }
 
